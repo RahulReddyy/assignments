@@ -1,3 +1,3 @@
-module github.com/RahulReddyy/Assignments/gocons/Packages
+module github.com/RahulReddyy/Assignments/Packages
 
 go 1.20
