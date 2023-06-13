@@ -1,3 +1,3 @@
-package github.com/RahulReddyy/Assignments/exvar
+package exvar
 
 var Name string = "hey"
