@@ -13,7 +13,7 @@ func IndexString(data string, check rune) int {
 		}
 	}
 	if len(slice)%2 == 0 {
-		return slice[2]
+		return slice[1]
 	} else {
 		return slice[count/2]
 	}
