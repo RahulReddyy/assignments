@@ -12,6 +12,9 @@ func IndexString(data string, check rune) int {
 			count++
 		}
 	}
-	midValue := count / 2
-	return slice[midValue]
+	if len(slice)%2 == 0 {
+		return slice[2]
+	} else {
+		return slice[count/2]
+	}
 }
