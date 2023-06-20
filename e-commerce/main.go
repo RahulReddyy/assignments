@@ -13,8 +13,8 @@ import (
 // 	display total bill
 
 type ecommmerce struct {
-	inventory map[string]int
-	cart      map[string]int
+	inventory map[string]int //key = product, value = price
+	cart      map[string]int //key = product, value = count of product
 }
 
 func (c ecommmerce) addItem(item string) {
