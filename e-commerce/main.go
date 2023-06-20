@@ -70,7 +70,7 @@ func main() {
 			fmt.Println("Enter the search item ")
 			fmt.Scan(&SearchItem)
 			for item := range newCart.inventory {
-				pattern := "[a-zA-Z]]\\s*" + item + ".*" + "|" + item + ".*"
+				pattern := ".\\s*" + item + ".*" + "|" + item + ".*"
 				reobj, _ := regexp.Compile(pattern)
 				matchCheck = reobj.MatchString(SearchItem)
 				if matchCheck {
