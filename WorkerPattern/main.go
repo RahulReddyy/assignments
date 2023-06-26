@@ -10,10 +10,17 @@ type employee struct {
 	salary int
 }
 
+func changeDetails(channel chan *int, done chan bool) {
+	for emp := range channel {
+		*emp += int(float64(*emp) * 0.1)
+		done <- true
+	}
+}
+
 func main() {
 	slice := []*employee{}
 
-	ch := make(chan *employee)
+	ch := make(chan *int)
 	done := make(chan bool)
 	NumOfWorkers := 3
 
@@ -29,22 +36,15 @@ func main() {
 		go changeDetails(ch, done)
 	}
 
-	for index, value := range slice {
-		ch <- slice[index]
+	for emloyee := range slice {
+		ch <- &slice[emloyee].salary
 		<-done
-		fmt.Printf("salary of employee with name - %s is %d", value.name, value.salary)
-		fmt.Println()
 	}
 
 	close(ch)
 	close(done)
 
-}
-
-func changeDetails(channel chan *employee, done chan bool) {
-	for emp := range channel {
-		change := float64(emp.salary) * 3.4
-		emp.salary += int(change)
-		done <- true
+	for _, value := range slice {
+		fmt.Printf("Updated salary of employee with name - %s is %d\n", value.name, value.salary)
 	}
 }
