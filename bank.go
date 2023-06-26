@@ -32,8 +32,8 @@ func (bvar *bank) addCustomer() {
 	fmt.Print("Enter customer deposit amount : ")
 	fmt.Scan(&newCus.amount)
 	newAccNoAdd := bvar.noOfCustomers()
-	newCus.amount = newAccNoAdd + 1
-	fmt.Println("Account number for the customer is : ", newCus.amount)
+	newCus.cAccNo = newAccNoAdd + 1
+	fmt.Println("Account number for the customer is : ", newCus.cAccNo)
 	bvar.genCus = append(bvar.genCus, *newCus)
 	fmt.Println(len(bvar.genCus))
 
