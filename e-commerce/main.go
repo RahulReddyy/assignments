@@ -18,8 +18,8 @@ type details struct {
 }
 
 type ecommmerce struct {
-	inventory map[string]details
-	cart      map[string]int
+	inventory map[string]details //item : {price,quantity}
+	cart      map[string]int  // item : count
 }
 
 func (c ecommmerce) addItem(item string) {
@@ -135,7 +135,7 @@ func main() {
 				Price:    8,
 				Quantity: 7,
 			},
-		}, cart: make(map[string]int), ///number of items avaiable in
+		}, cart: make(map[string]int), 
 	}
 	var (
 		SearchItem, invenItem string
