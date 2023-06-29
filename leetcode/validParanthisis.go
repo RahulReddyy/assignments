@@ -24,7 +24,7 @@ func isValid(s string) bool {
 	}
 	return len(slice) == 0
 }
-func main1() {
+func main() {
 	str := ")()())"
 	fmt.Println(isValid(str))
 }
