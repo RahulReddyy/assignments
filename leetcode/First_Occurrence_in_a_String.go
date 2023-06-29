@@ -10,7 +10,7 @@ import (
 func strStr(haystack string, needle string) int {
 	return strings.Index(haystack, needle)
 }
-func main89() {
+func main() {
 
 	haystack := "sadbutsad"
 	needle := "sad"
